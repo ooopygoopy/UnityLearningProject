@@ -16,6 +16,7 @@ public class ControllerScript : MonoBehaviour
 
     //locates the character controller to move the character
     private CharacterController characterController;
+    //private Rigidbody2D rb;
 
     //locates the input handler to handle input
     private PlayerInputHandler inputHandler;
@@ -26,6 +27,7 @@ public class ControllerScript : MonoBehaviour
     private void Awake()
     {
         characterController = GetComponent<CharacterController>();
+        //rb = GetComponent<Rigidbody2D>();
 
         inputHandler = PlayerInputHandler.Instance;
     }
@@ -54,6 +56,7 @@ public class ControllerScript : MonoBehaviour
 
         //moves character with respect to time
         characterController.Move(currentMovement * Time.deltaTime);
+        //rb.MovePosition(currentMovement * Time.deltaTime);
 
     }
     void HandleJumping()
